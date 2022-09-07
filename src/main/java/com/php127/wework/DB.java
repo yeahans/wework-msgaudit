@@ -22,11 +22,12 @@ public class DB {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         //地址:端口
-        dataSource.setUrl("jdbc:mysql://127.0.0.1:3306/test?useSSL=false&characterEncoding=utf-8&autoReconnect=true");
+        // rm-bp1zk6h4k16mcr868to.mysql.rds.aliyuncs.com
+        dataSource.setUrl("jdbc:mysql://rm-bp1zk6h4k16mcr868to.mysql.rds.aliyuncs.com/warehouse?useSSL=false&characterEncoding=utf-8&autoReconnect=true");
         //用户名
-        dataSource.setUsername("root");
+        dataSource.setUsername("warehouse");
         //密码
-        dataSource.setPassword("root");
+        dataSource.setPassword("GATd8*fEfStZ7Dc");
         return dataSource;
     }
 

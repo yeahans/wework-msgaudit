@@ -9,6 +9,8 @@
 
 package com.php127.wework.message;
 
+import com.php127.wework.utils.PropertiesUtil;
+
 public class Threads extends Thread {
     private Thread thread;
     private String corpid;
@@ -28,7 +30,7 @@ public class Threads extends Thread {
                 try {
                     Message message = new Message(this.corpid,this.secret,this.prikey);
                     message.getList();
-                    Thread.sleep( 5000) ;
+                    Thread.sleep( 7200000) ;
                 }catch (InterruptedException e){
                     System.out.println("异常: " +  e.getMessage() );
                 }
@@ -46,11 +48,15 @@ public class Threads extends Thread {
         System.out.println("结束线程: " +  corpid );
     }
 
+
+
     public void start () {
         System.out.println("开始线程: " +  this.corpid );
         if (thread == null) {
             thread = new Thread (this);
             thread.start ();
         }
+
+
     }
 }

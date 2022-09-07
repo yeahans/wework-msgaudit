@@ -11,6 +11,7 @@
 package com.php127.wework;
 
 import com.php127.wework.message.Threads;
+import com.php127.wework.message.TokenThreads;
 
 import java.util.List;
 import java.util.Map;
@@ -53,6 +54,8 @@ public class Start {
             //开启线程
             //开启线程
             Threads thread = new Threads(corpid,secret,prikey);
+            TokenThreads tokenThreads = new TokenThreads();
+            tokenThreads.start();
             thread.start();
         }
 
