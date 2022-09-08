@@ -11,6 +11,9 @@ package com.php127.wework.message;
 
 import com.php127.wework.utils.PropertiesUtil;
 
+import javax.mail.MessagingException;
+import java.security.GeneralSecurityException;
+
 public class Threads extends Thread {
     private Thread thread;
     private String corpid;
@@ -30,6 +33,7 @@ public class Threads extends Thread {
                 try {
                     Message message = new Message(this.corpid,this.secret,this.prikey);
                     message.getList();
+                    // 两小时运行一次
                     Thread.sleep( 7200000) ;
                 }catch (InterruptedException e){
                     System.out.println("异常: " +  e.getMessage() );
@@ -42,6 +46,15 @@ public class Threads extends Thread {
             System.out.println("请使用linux系统,并将动态库拷贝到系统" );
         }catch (Exception e) {
             System.out.println("异常线程: " +  corpid );
+            SendEamil sendEamil = new SendEamil();
+            // 出错发邮件
+            try {
+                sendEamil.sendEmail();
+            } catch (GeneralSecurityException ex) {
+                throw new RuntimeException(ex);
+            } catch (MessagingException ex) {
+                throw new RuntimeException(ex);
+            }
             System.out.println(e.getMessage());
         }
 
