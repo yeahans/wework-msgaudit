@@ -19,7 +19,7 @@ import java.util.Properties;
  */
 public class PropertiesUtil {
     //属性文件的路径   
-    static String profilepath="src/main/resources/token.properties";
+    static String profilepath="/root/apps/zhiruapps/token.properties";
     /**
      * 采用静态方法
      */

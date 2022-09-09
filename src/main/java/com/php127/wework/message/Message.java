@@ -424,8 +424,8 @@ public class Message {
         try {
             JSONArray tolistList = json.getJSONArray("tolist");
 
-            AccessToken accessToken = new AccessToken();
-            String token = accessToken.getToken("wwc92974a314c84866","2PvRo2o0V-YANbZlzncW_3syC2atfdM15_y0hK2SoKs");
+            // AccessToken accessToken = new AccessToken();
+            // String token = accessToken.getToken("wwc92974a314c84866","2PvRo2o0V-YANbZlzncW_3syC2atfdM15_y0hK2SoKs");
             int len = tolistList.length();
             String[] tolistArray = new String[len];
             for (int i = 0; i < len; i++) {
